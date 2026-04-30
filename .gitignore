@@ -1,0 +1,25 @@
+# === 编译产物 ===
+build/
+release/
+
+# === Qt 自动生成 ===
+*.o
+*.obj
+moc_*.cpp
+qrc_*.cpp
+*.qm
+*.rcc
+
+# === IDE ===
+.vscode/
+.idea/
+*.suo
+*.ncb
+*.aps
+*.pdb
+
+# === 日志/临时文件 ===
+*.log
+*.txt
+!README.txt
+!LICENSE.txt
