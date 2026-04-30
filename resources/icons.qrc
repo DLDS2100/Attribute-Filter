@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>type_icons/普通.png</file>
+        <file>type_icons/草.png</file>
+        <file>type_icons/火.png</file>
+        <file>type_icons/水.png</file>
+        <file>type_icons/光.png</file>
+        <file>type_icons/地.png</file>
+        <file>type_icons/冰.png</file>
+        <file>type_icons/龙.png</file>
+        <file>type_icons/电.png</file>
+        <file>type_icons/毒.png</file>
+        <file>type_icons/虫.png</file>
+        <file>type_icons/武.png</file>
+        <file>type_icons/翼.png</file>
+        <file>type_icons/萌.png</file>
+        <file>type_icons/幽.png</file>
+        <file>type_icons/恶魔.png</file>
+        <file>type_icons/机械.png</file>
+        <file>type_icons/幻.png</file>
+    </qresource>
+</RCC>
