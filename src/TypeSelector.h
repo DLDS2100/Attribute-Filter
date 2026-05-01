@@ -2,9 +2,9 @@
 #define TYPESELECTOR_H
 
 #include <QDialog>
-#include <QPushButton>
+#include <QToolButton>
 
-// 18 属性选择弹窗（3x6 网格）
+// 18 属性选择弹窗（3x6 网格，图标+名称布局）
 class TypeSelector : public QDialog {
     Q_OBJECT
 public:
@@ -18,7 +18,7 @@ signals:
 private:
     QString m_selected;
 
-    QPushButton* createTypeButton(const QString &typeName);
+    QToolButton* createTypeButton(const QString &typeName);
 };
 
 #endif // TYPESELECTOR_H

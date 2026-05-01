@@ -33,7 +33,7 @@ inline const QMap<QString, QString> TYPE_ICON_MAP = {
     {QStringLiteral("翼"),   QStringLiteral(":/icons/type_icons/翼.png")},
     {QStringLiteral("萌"),   QStringLiteral(":/icons/type_icons/萌.png")},
     {QStringLiteral("幽"),   QStringLiteral(":/icons/type_icons/幽.png")},
-    {QStringLiteral("恶"),   QStringLiteral(":/icons/type_icons/恶魔.png")},  // 特殊映射
+    {QStringLiteral("恶"),   QStringLiteral(":/icons/type_icons/恶.png")},  // 新图标
     {QStringLiteral("机械"), QStringLiteral(":/icons/type_icons/机械.png")},
     {QStringLiteral("幻"),   QStringLiteral(":/icons/type_icons/幻.png")},
 };
