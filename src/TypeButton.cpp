@@ -16,8 +16,8 @@ TypeButton::TypeButton(bool isOptional, QWidget *parent)
 void TypeButton::updateAppearance()
 {
     if (m_typeName.isEmpty()) {
-        setText(m_isOptional ? QStringLiteral("+ 第二属性")
-                             : QStringLiteral("选择属性"));
+        setText(m_isOptional ? QString::fromUtf8(u8"+ 第二属性")
+                             : QString::fromUtf8(u8"选择属性"));
         setIcon(QIcon());
         setStyleSheet(QStringLiteral(
             "QPushButton {"
@@ -87,7 +87,6 @@ void TypeButton::mousePressEvent(QMouseEvent *event)
 
     if (event->button() == Qt::LeftButton) {
         TypeSelector dialog(this);
-        // 正确居中：以父窗口中心为参考
         QWidget *top = this;
         while (top->parentWidget()) top = top->parentWidget();
         QPoint winCenter = top->mapToGlobal(

@@ -11,7 +11,7 @@
 TypeSelector::TypeSelector(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(QStringLiteral("选择属性"));
+    setWindowTitle(QString::fromUtf8(u8"选择属性"));
     setFixedSize(860, 600);
     setModal(true);
 
@@ -26,7 +26,7 @@ TypeSelector::TypeSelector(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(20, 16, 20, 20);
 
-    QLabel *titleLabel = new QLabel(QStringLiteral("选择属性类型"), this);
+    QLabel *titleLabel = new QLabel(QString::fromUtf8(u8"选择属性类型"), this);
     titleLabel->setAlignment(Qt::AlignCenter);
     titleLabel->setStyleSheet(QStringLiteral(
         "font-size: 18px; font-weight: bold; padding: 8px; color: #333333;"));

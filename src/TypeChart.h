@@ -5,6 +5,12 @@
 #include <QMap>
 #include <vector>
 
+// 计算模式：联防（防守） / 打击（进攻）
+enum class CalcMode {
+    Defense,
+    Offense
+};
+
 // 18 种属性标准名称（与 TypeChart.json _types 数组对应）
 // 注意：文件名中"恶"属性对应 PNG 名为"恶魔.png"
 inline const QStringList TYPE_NAMES = {
