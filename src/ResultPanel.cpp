@@ -30,8 +30,13 @@ void ResultPanel::setMode(CalcMode mode)
 
 void ResultPanel::clearResults()
 {
-    qDeleteAll(findChildren<QWidget*>(QString(), Qt::FindDirectChildrenOnly));
     QVBoxLayout *layout = qobject_cast<QVBoxLayout*>(this->layout());
+    while (QLayoutItem *item = layout->takeAt(0)) {
+        if (QWidget *w = item->widget()) {
+            delete w;
+        }
+        delete item;
+    }
 
     QString titleText = (m_mode == CalcMode::Defense)
         ? QString::fromUtf8(u8"联防结果")
@@ -54,9 +59,14 @@ void ResultPanel::clearResults()
 
 void ResultPanel::updateResults(const QMap<QString, double> &resultMap)
 {
-    // 清除旧内容
-    qDeleteAll(findChildren<QWidget*>(QString(), Qt::FindDirectChildrenOnly));
+    // 清除旧内容（包括 Widget 子项和 Spacer 条目）
     QVBoxLayout *layout = qobject_cast<QVBoxLayout*>(this->layout());
+    while (QLayoutItem *item = layout->takeAt(0)) {
+        if (QWidget *w = item->widget()) {
+            delete w;
+        }
+        delete item;
+    }
 
     // 标题
     QString titleText = (m_mode == CalcMode::Defense)
