@@ -2,7 +2,7 @@
 cd /d "%~dp0"
 
 echo ======================================
-echo   Defense Calculator v2.0 - Clean Build
+echo   Defense Calculator v2.1 - Clean Build
 echo ======================================
 echo.
 
@@ -84,7 +84,7 @@ echo        TypeChart.json copied.
 
 echo.
 echo ======================================
-echo   Build SUCCESS! (v2.0)
+echo   Build SUCCESS! (v2.1)
 echo   Output: build\team-defense-calc.exe
 echo ======================================
 exit /b 0
