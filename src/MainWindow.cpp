@@ -1,7 +1,7 @@
 #include "MainWindow.h"
 #include "OffenseCalculator.h"
 #include <QMessageBox>
-#include <QScrollArea>
+#include <QScrollBar>
 #include <QApplication>
 #include <QLabel>
 
@@ -11,11 +11,12 @@ MainWindow::MainWindow(QWidget *parent)
     , m_addBtn(nullptr)
     , m_calcBtn(nullptr)
     , m_resultPanel(nullptr)
+    , m_resultScroll(nullptr)
     , m_tabDefense(nullptr)
     , m_tabOffense(nullptr)
     , m_modeSubLabel(nullptr)
 {
-    setWindowTitle(QStringLiteral("洛克王国：世界 - 属性盲点计算器 v2.0"));
+    setWindowTitle(QStringLiteral("洛克王国：世界 - 属性盲点计算器 v2.1"));
     setMinimumSize(720, 950);
     resize(720, 1000);
 
@@ -157,6 +158,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // 结果面板
     QScrollArea *resultScroll = new QScrollArea(this);
+    m_resultScroll = resultScroll;
     resultScroll->setWidgetResizable(true);
     resultScroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     resultScroll->setStyleSheet(QStringLiteral(
@@ -361,6 +363,11 @@ void MainWindow::onCalculate()
         OffenseCalculator calc(m_chart);
         QMap<QString, double> result = calc.calcTeamOffense(team);
         m_resultPanel->updateResults(result);
+    }
+
+    // 每次计算后将结果面板滚回顶部，防止图标行下移
+    if (m_resultScroll) {
+        m_resultScroll->verticalScrollBar()->setValue(0);
     }
 }
 
